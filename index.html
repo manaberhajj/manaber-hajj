@@ -1421,7 +1421,7 @@ body{font-family:'Tajawal',sans-serif;background:var(--bg);color:var(--txt);dire
 // ══════════════════════════════════════════════
 // SUPABASE SETUP
 // ══════════════════════════════════════════════
-const SURL = 'https://kecgxszsyqhosfwfigt.supabase.co';
+const SURL = 'https://kecgxszssyqhosfwfigt.supabase.co';
 const SKEY = 'sb_publishable_B5P6EshGCePobDsYvgMh-A_JQUTUwdz';
 const db = window.supabase.createClient(SURL, SKEY);
 
@@ -1995,7 +1995,7 @@ async function saveTask(){
       if(fd){
         const {data:ud}=db.storage.from('attachments').getPublicUrl(uploadPath);
         let furl=ud?.publicUrl||'';
-        if(!furl.includes('supabase.co')) furl='https://kecgxszsyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+uploadPath;
+        if(!furl.includes('supabase.co')) furl='https://kecgxszssyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+uploadPath;
         editingFiles.push({name:file.name,url:furl,addedBy:'admin'});
       }
     }
@@ -2202,7 +2202,7 @@ async function submitTask(){
     if(!fe&&fd){
       const {data:ud}=db.storage.from('attachments').getPublicUrl(taskSubmitPath);
       fileUrl=ud?.publicUrl||'';
-      if(!fileUrl||!fileUrl.includes('supabase'))fileUrl='https://kecgxszsyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+taskSubmitPath;
+      if(!fileUrl||!fileUrl.includes('supabase'))fileUrl='https://kecgxszssyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+taskSubmitPath;
       fileName=file.name; // الاسم الأصلي للعرض
     }
     hideLoading();
@@ -2729,7 +2729,7 @@ async function saveKpiTask(){
       if(!fe&&fd){
         const {data:ud}=db.storage.from('attachments').getPublicUrl(safePath2);
         var furl=ud?.publicUrl||'';
-        if(!furl||!furl.includes('supabase'))furl='https://kecgxszsyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+safePath2;
+        if(!furl||!furl.includes('supabase'))furl='https://kecgxszssyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+safePath2;
         newFilesData.push({name:file.name,url:furl}); // name=الاسم الأصلي
       }
     }
@@ -2943,7 +2943,7 @@ async function submitKpiTask(id,fileInput,textInput){
     if(!fe&&fd){
       const {data:ud}=db.storage.from('attachments').getPublicUrl(submitPath);
       fileUrl=ud?.publicUrl||'';
-      if(!fileUrl||!fileUrl.includes('supabase'))fileUrl='https://kecgxszsyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+submitPath;
+      if(!fileUrl||!fileUrl.includes('supabase'))fileUrl='https://kecgxszssyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+submitPath;
       fileName=file.name; // الاسم الأصلي
     }
     hideLoading();
@@ -3065,7 +3065,7 @@ async function uploadKpiFile(id,input){
       const {data:ud}=db.storage.from('attachments').getPublicUrl(safePath);
       var url=ud?.publicUrl||'';
       if(!url||!url.includes('supabase')){
-        url='https://kecgxszsyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+safePath;
+        url='https://kecgxszssyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+safePath;
       }
       newFiles.push({name:file.name,url:url}); // name=الاسم الأصلي, url=رابط الملف
     }
@@ -4239,7 +4239,7 @@ function renderFileLink(name, url){
   if(!name) return '';
   var finalUrl=url||'';
   if(finalUrl&&!finalUrl.startsWith('http')){
-    finalUrl='https://kecgxszsyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+finalUrl;
+    finalUrl='https://kecgxszssyqhosfwfigt.supabase.co/storage/v1/object/public/attachments/'+finalUrl;
   }
   var color=fileColor(name);
   var displayName=name.length>25?name.substring(0,22)+'...':name;
